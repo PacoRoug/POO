@@ -1,0 +1,46 @@
+public class tuit{
+	String usuario,
+	       texto;
+	int RT;
+
+//constu
+//set/get
+//tostring
+	public tuit(){
+		this.usuario=usuario;
+		this.texto=texto;
+		this.RT=RT;
+	}
+
+	public void setTweet(String usuario, String texto, int RT){
+		this.usuario=usuario;
+		if (this.texto.length <= 140){
+			this.texto=texto;
+		}
+		this.texto=texto;
+		this.RT=RT;
+	}
+
+	public String getUsuario(){
+		return this.usuario;
+	}
+
+	public String toString(){
+  		return this.usuario + " " +this.texto +" " +this.RT;
+	}
+	
+	
+
+	
+
+
+
+
+
+	public static void main(String[] args){
+		tuit paco= new tuit ();
+
+		paco.setTweet("Paco","Hola a todos",3);
+
+		System.out.println(paco);
+		
