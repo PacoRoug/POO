@@ -1,0 +1,40 @@
+public class lista{
+	
+	public static void listilla(String[] args){
+		int uno,
+		    dos,
+		    cuenta=2;
+		String[][] lista2;
+		uno= Integer.parseInt(args[0]);
+		dos= Integer.parseInt(args[1]);
+		lista2=new String[uno][dos];
+
+		for (int i=0;i<uno;i++){
+			for (int j=0;j<dos;j++){
+				
+				lista2[i][j]=args[cuenta];
+				System.out.print(lista2[i][j]);
+				cuenta=cuenta+1;
+				
+			}
+
+			
+			
+		System.out.println(" ");
+		}
+	  
+	}
+
+	public static void main (String[] args){
+		
+		listilla(args);
+	
+	}
+
+
+
+
+
+
+
+}
