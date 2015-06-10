@@ -14,10 +14,10 @@ public class tuit{
 
 	public void setTweet(String usuario, String texto, int RT){
 		this.usuario=usuario;
-		if (this.texto.length <= 140){
+		if (texto.length() <= 140){
 			this.texto=texto;
 		}
-		this.texto=texto;
+		//this.texto=texto;
 		this.RT=RT;
 	}
 
@@ -42,5 +42,11 @@ public class tuit{
 
 		paco.setTweet("Paco","Hola a todos",3);
 
-		System.out.println(paco);
+		
+		
+
+	}
+
+
+}
 		
