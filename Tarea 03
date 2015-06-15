@@ -1,0 +1,25 @@
+import javax.swing.*;
+public class EjemploAritmeticException{
+	
+	public static int divEntera(int a, int b){
+		return a/b;
+	}
+
+	public static void main (String[] args){
+		int uno=Integer.parseInt(JOptionPane.showInputDialog("Introduce un número"));
+		int dos=Integer.parseInt(JOptionPane.showInputDialog("Introduce otro número"));
+		int res=0;
+		try{
+			
+			while (dos==0){
+				throw new NumberFormatException();
+			}
+			res= divEntera(uno,dos);
+		}
+		catch(NumberFormatException e){
+				dos=Integer.parseInt(JOptionPane.showInputDialog("Introduce otro número porfis"));
+		}
+		JOptionPane.showMessageDialog(null, "el resultado es"+res);
+	}
+
+}
