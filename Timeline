@@ -1,41 +1,55 @@
-public class Timeline{
-	tuit[] tweets;
+import javax.swing.*;
+public class EjemploAritmeticException{
+	
+	public static int divEntera(int a, int b){
+		return a/b;
+	}
 
-
-	public Timeline(){
-		this.tweets= new tuit[11];
-		for (int i=0; i<this.tweets.length;i++){
-			this.tweets[i]=new tuit();
+	public static void main (String[] args){
+		int uno=0;
+		int dos=0;
+		int res=0;
+		try{
+			uno=Integer.parseInt(JOptionPane.showInputDialog("Introduce un número"));
+			
+			if (String.class.isInstance(uno)== true){
+				throw new NumberFormatException();
+			}
+		}
+		catch(NumberFormatException e){	
+			
+				uno=Integer.parseInt(JOptionPane.showInputDialog("Introduce un número diferente"));	
 		}
 
-	}
 
-	public void asignar(int posicion, String usuario, String texto, int RT){
-		this.tweets[posicion].setTweet(usuario,texto,RT);
-		
-
-	}
-
-
-
-
-	public void imprimirTweets(){
-		for (int i=0; i<this.tweets.length;i++){
-			System.out.println(this.tweets[i]);
+		try{
+			dos=Integer.parseInt(JOptionPane.showInputDialog("Introduce otro número"));
+			
+			if(String.class.isInstance(uno)== true){
+				throw new NumberFormatException();
+			}
 		}
+		catch(NumberFormatException e){	
+			
+				dos=Integer.parseInt(JOptionPane.showInputDialog("Introduce un número diferente"));	
+		}
+
+
+
+		try{
+
+			if (dos==0){
+				throw new ErrorAritmeticException();
+			}
+		}
+		catch(ErrorAritmeticException e){
+			while (dos==0){	
+				dos=Integer.parseInt(JOptionPane.showInputDialog("Introduce un número diferente a 0"));
+			}
+		}
+		res= divEntera(uno,dos);
+		JOptionPane.showMessageDialog(null, "el resultado es "+res);
 	}
 
+}	
 
-
-
-	public static void main(String[] args){
-		
-		Timeline pacos= new Timeline();
-		pacos.asignar(0, "Yo ",  "funciona porfis ", 4);
-		pacos.imprimirTweets();
-
-	}
-
-
-
-}
